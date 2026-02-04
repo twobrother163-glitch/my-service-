@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subrata Mondal | 60+ Professional Services Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #996515;
+            --bg: #050505;
+            --card-bg: rgba(20, 20, 20, 0.9);
+            --glow: rgba(212, 175, 55, 0.4);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* 8D ANIMATED BACKGROUND */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
+            z-index: -1;
+        }
+
+        .container { max-width: 1400px; margin: auto; padding: 20px; }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid var(--gold);
+            background: linear-gradient(to bottom, rgba(212,175,55,0.1), transparent);
+            border-radius: 0 0 50px 50px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 8vw, 4rem);
+            margin: 0;
+            background: linear-gradient(to right, #fff, var(--gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 5px;
+        }
+
+        /* SEARCH SYSTEM */
+        .search-container {
+            margin: 40px auto;
+            max-width: 600px;
+            position: relative;
+        }
+
+        #serviceSearch {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--gold);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            box-shadow: 0 0 15px var(--glow);
+        }
+
+        /* 8D MULTI-STYLE GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.5s;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: scale(1.05) rotateY(10deg);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        /* FLOATING CHATBOT */
+        .bot-link {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px var(--glow);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .social-icons a {
+            color: var(--gold);
+            font-size: 2rem;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover { color: #fff; text-shadow: 0 0 20px var(--gold); }
+
+    </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<a href="YOUR_CHATBOT_LINK" class="bot-link" target="_blank">
+    <i class="fas fa-robot fa-2x" style="color: black;"></i>
+</a>
+
+<div class="container">
+    <header>
+        <h1>SUBRATA MONDAL</h1>
+        <p style="letter-spacing: 5px; color: #888;">60+ PREMIUM BUSINESS & TECHNICAL SERVICES</p>
+        
+        <div class="search-container">
+            <input type="text" id="serviceSearch" placeholder="Search for a service (e.g. SEO, Design, HR)..." onkeyup="searchServices()">
+        </div>
+    </header>
+
+    <div class="services-grid" id="servicesGrid">
+        </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/beright454/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/subrata-mondal-29601126a/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/beright454/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p style="margin-top: 40px; color: #444;">&copy; 2024 Subrata Mondal Portfolio | All Rights Reserved</p>
+    </footer>
+</div>
+
+<script>
+    const services = [
+        {id: 1, name: "Business Consultation", desc: "Professional guidance to help identify challenges and create effective solutions.", icon: "fa-briefcase"},
+        {id: 2, name: "Strategic Planning", desc: "Structured planning to achieve long-term business growth and stability.", icon: "fa-chess"},
+        {id: 3, name: "Market Research", desc: "In-depth research to understand market trends customer needs and competitors.", icon: "fa-magnifying-glass-chart"},
+        {id: 4, name: "Brand Development", desc: "Building strong brand identity values and market positioning.", icon: "fa-award"},
+        {id: 5, name: "Logo Design", desc: "Creative logo designs that represent your brand vision and identity.", icon: "fa-pen-nib"},
+        {id: 6, name: "Graphic Design", desc: "Professional visual designs for digital and print media.", icon: "fa-palette"},
+        {id: 7, name: "Website Design", desc: "Modern responsive and user-friendly website designs.", icon: "fa-desktop"},
+        {id: 8, name: "Website Development", desc: "High-quality website development using modern technologies.", icon: "fa-code"},
+        {id: 9, name: "Mobile App Development", desc: "Custom mobile applications for Android and iOS platforms.", icon: "fa-mobile-screen"},
+        {id: 10, name: "Software Development", desc: "Tailored software solutions for business automation and growth.", icon: "fa-laptop-code"},
+        {id: 11, name: "E-commerce Solutions", desc: "Complete online store setup and management services.", icon: "fa-cart-shopping"},
+        {id: 12, name: "UI UX Design", desc: "User-focused interface and experience design for better engagement.", icon: "fa-wand-magic-sparkles"},
+        {id: 13, name: "Content Writing", desc: "Professional content for websites blogs and marketing materials.", icon: "fa-file-lines"},
+        {id: 14, name: "Copywriting", desc: "Persuasive content to increase sales and customer conversions.", icon: "fa-pen-to-square"},
+        {id: 15, name: "SEO Services", desc: "Search engine optimization to improve website ranking and visibility.", icon: "fa-chart-line"},
+        {id: 16, name: "Social Media Management", desc: "Managing social platforms to grow audience and engagement.", icon: "fa-share-nodes"},
+        {id: 17, name: "Digital Marketing", desc: "Complete online marketing solutions for business growth.", icon: "fa-bullhorn"},
+        {id: 18, name: "Email Marketing", desc: "Targeted email campaigns to reach and retain customers.", icon: "fa-envelope-open-text"},
+        {id: 19, name: "PPC Advertising", desc: "Paid advertising campaigns for fast traffic and conversions.", icon: "fa-mouse-pointer"},
+        {id: 20, name: "Lead Generation", desc: "Systems and strategies to generate quality business leads.", icon: "fa-user-plus"},
+        {id: 21, name: "CRM Solutions", desc: "Customer relationship management system setup and support.", icon: "fa-users-gear"},
+        {id: 22, name: "Data Analysis", desc: "Business data analysis for better decision-making.", icon: "fa-database"},
+        {id: 23, name: "Cloud Solutions", desc: "Cloud storage hosting and system management services.", icon: "fa-cloud-arrow-up"},
+        {id: 24, name: "Cybersecurity Services", desc: "Protection of systems data and networks from threats.", icon: "fa-shield-halved"},
+        {id: 25, name: "IT Support Services", desc: "Technical support and IT system management.", icon: "fa-headset"},
+        {id: 26, name: "System Integration", desc: "Integration of different systems into one efficient workflow.", icon: "fa-network-wired"},
+        {id: 27, name: "Automation Solutions", desc: "Business process automation for efficiency and productivity.", icon: "fa-robot"},
+        {id: 28, name: "Project Management", desc: "Professional management of projects from start to finish.", icon: "fa-list-check"},
+        {id: 29, name: "Quality Assurance", desc: "Testing and quality control to ensure high standards.", icon: "fa-check-double"},
+        {id: 30, name: "Maintenance Services", desc: "Regular system and service maintenance support.", icon: "fa-screwdriver-wrench"},
+        {id: 31, name: "Technical Training", desc: "Training programs for technical tools and systems.", icon: "fa-chalkboard-user"},
+        {id: 32, name: "Business Training", desc: "Skill development and business knowledge training.", icon: "fa-graduation-cap"},
+        {id: 33, name: "Customer Support Services", desc: "Dedicated support for customer satisfaction.", icon: "fa-comments"},
+        {id: 34, name: "Call Center Services", desc: "Inbound and outbound customer communication services.", icon: "fa-phone-volume"},
+        {id: 35, name: "Virtual Assistance", desc: "Remote administrative and business support services.", icon: "fa-user-tie"},
+        {id: 36, name: "Documentation Services", desc: "Professional business and technical documentation.", icon: "fa-file-signature"},
+        {id: 37, name: "Legal Documentation Support", desc: "Assistance in preparing business-related documents.", icon: "fa-scale-balanced"},
+        {id: 38, name: "Accounting Services", desc: "Financial management bookkeeping and reporting.", icon: "fa-calculator"},
+        {id: 39, name: "Tax Consultancy", desc: "Tax planning and compliance support services.", icon: "fa-money-bill-transfer"},
+        {id: 40, name: "Financial Advisory", desc: "Expert financial planning and advisory services.", icon: "fa-coins"},
+        {id: 41, name: "HR Services", desc: "Human resource management and recruitment support.", icon: "fa-users-between-lines"},
+        {id: 42, name: "Recruitment Services", desc: "Hiring and talent acquisition solutions.", icon: "fa-user-magnifying-glass"},
+        {id: 43, name: "Payroll Management", desc: "Employee salary and payroll processing services.", icon: "fa-file-invoice-dollar"},
+        {id: 44, name: "Compliance Management", desc: "Business regulatory and compliance support.", icon: "fa-building-shield"},
+        {id: 45, name: "Risk Management", desc: "Identifying and managing business risks.", icon: "fa-triangle-exclamation"},
+        {id: 46, name: "Operations Management", desc: "Optimizing daily business operations.", icon: "fa-gears"},
+        {id: 47, name: "Supply Chain Management", desc: "Efficient supply and logistics solutions.", icon: "fa-truck-ramp-box"},
+        {id: 48, name: "Inventory Management", desc: "Stock tracking and inventory optimization.", icon: "fa-boxes-stacked"},
+        {id: 49, name: "Procurement Services", desc: "Professional sourcing and purchasing services.", icon: "fa-handshake"},
+        {id: 50, name: "Logistics Support", desc: "Transportation and delivery coordination services.", icon: "fa-map-location-dot"},
+        {id: 51, name: "Facility Management", desc: "Building and infrastructure management services.", icon: "fa-building"},
+        {id: 52, name: "Maintenance Operations", desc: "Operational maintenance and repair services.", icon: "fa-wrench"},
+        {id: 53, name: "Event Management", desc: "Planning and execution of corporate and business events.", icon: "fa-calendar-star"},
+        {id: 54, name: "Public Relations", desc: "Brand image management and media communication.", icon: "fa-bullseye"},
+        {id: 55, name: "Media Production", desc: "Photo video and digital media creation services.", icon: "fa-clapperboard"},
+        {id: 56, name: "Advertising Services", desc: "Brand promotion through online and offline channels.", icon: "fa-rectangle-ad"},
+        {id: 57, name: "Printing Services", desc: "Professional printing for business materials.", icon: "fa-print"},
+        {id: 58, name: "Packaging Design", desc: "Creative and functional product packaging solutions.", icon: "fa-box-open"},
+        {id: 59, name: "Product Development", desc: "From idea to launch product development services.", icon: "fa-lightbulb"},
+        {id: 60, name: "Business Expansion Consulting", desc: "Support for scaling growth and market expansion.", icon: "fa-arrow-up-right-dots"}
+    ];
+
+    function displayServices(filteredServices) {
+        const grid = document.getElementById('servicesGrid');
+        grid.innerHTML = filteredServices.map(s => `
+            <div class="service-card">
+                <i class="fas ${s.icon}"></i>
+                <h3>${s.name}</h3>
+                <p>${s.desc}</p>
+            </div>
+        `).join('');
+    }
+
+    function searchServices() {
+        const term = document.getElementById('serviceSearch').value.toLowerCase();
+        const filtered = services.filter(s => 
+            s.name.toLowerCase().includes(term) || 
+            s.desc.toLowerCase().includes(term)
+        );
+        displayServices(filtered);
+    }
+
+    // Initial Load
+    displayServices(services);
+</script>
+
+</body>
+</html>
